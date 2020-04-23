@@ -18,17 +18,7 @@ pipeline {
             }
         }
 
-
-
-        stage ('Install Stage') {
-            steps {
-                withMaven(maven : 'apache-maven-3.6.0') {
-                    sh 'mvn install'
-                }
-            }
-        }
-
-         stage ('SonarQube analysis') {
+stage ('SonarQube analysis') {
              environment {
              def scannerHome = tool 'sonarscanner'
              }
@@ -39,4 +29,13 @@ pipeline {
             }
            }
          }
-}
+
+        stage ('Install Stage') {
+            steps {
+                withMaven(maven : 'apache-maven-3.6.0') {
+                    sh 'mvn install'
+                }
+            }
+        }
+
+ }
