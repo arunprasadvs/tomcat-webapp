@@ -23,7 +23,7 @@ pipeline {
              }
              steps {
                 withSonarQubeEnv('jenkinsonar') {
-                sh 'mvn clean package sonar:sonar'
+                sh 'mvn test'
              }
             }
            }
