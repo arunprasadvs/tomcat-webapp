@@ -17,5 +17,7 @@
   </dependencies>
   <build>
     <finalName>WebApp</finalName>
+    <packaging>war</packaging>
+
   </build>
 </project>
